@@ -1,0 +1,43 @@
+[user]
+	email = <your email>
+	name = <your name>
+[color]
+	diff = auto
+	status = auto
+	ui = true
+	branch = auto
+	interactive = auto
+[alias]
+	st = status
+	ci = commit
+	df = diff
+	co = checkout
+	br = branch
+	mg = merge
+	rs = reset
+    sh = stash
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=relative
+    lg = !"git lg1"
+    lg1 = log --graph --pretty=format:'%Cblue%h%Creset %an%Creset | %s %Cgreen(%cr)%Creset%C(yellow)%d%Creset' --abbrev-commit --date=relative
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(bold)%an%C(reset) (%ai)%C(reset)%C(bold red)%d%C(reset)%n''          %C(white)%s%C(reset)' --all
+    type = cat-file -t
+    dump = cat-file -p
+    
+[core]
+	editor = vim
+[credential]
+	helper = osxkeychain
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[merge]
+	tool = p4mergetool
+[mergetool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $PWD/$BASE $PWD/$LOCAL $PWD/$REMOTE $PWD/$MERGED
+	trustExitCode = false
+[mergetool]
+	keepBackup = false
+[diff]
+	tool = p4mergetool
+[difftool "p4mergetool"]
+	cmd = /Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE
