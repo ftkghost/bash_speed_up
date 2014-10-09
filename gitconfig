@@ -10,26 +10,32 @@
 [alias]
 	st = status
 	ci = commit
+    cm = commit -m
+    cmd= commit --amend
 	df = diff
 	co = checkout
 	br = branch
 	mg = merge
 	rs = reset
+    rollback = reset --soft HEAD^
     sh = stash
+    ush = stash pop
+    last = log -1 HEAD 
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=relative
     lg = !"git lg1"
     lg1 = log --graph --pretty=format:'%Cblue%h%Creset %an%Creset | %s %Cgreen(%cr)%Creset%C(yellow)%d%Creset' --abbrev-commit --date=relative
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(blue)%h%C(reset) - %C(bold)%an%C(reset) (%ai)%C(reset)%C(bold red)%d%C(reset)%n''          %C(white)%s%C(reset)' --all
     type = cat-file -t
     dump = cat-file -p
-    
+
 [core]
 	editor = vim
 [credential]
 	helper = osxkeychain
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
 [merge]
 	tool = p4mergetool
 [mergetool "p4mergetool"]
