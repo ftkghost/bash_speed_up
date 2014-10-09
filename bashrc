@@ -82,7 +82,7 @@ else
     echo 'Warning: ADB auto-completion $bash_source_file is not installed.'
 fi
 
-bash_source_file=${HOME}/.git-prompt.bash
+bash_source_file=${HOME}/.git-prompt.sh
 if [ -f $bash_source_file ];
 then
     source $bash_source_file
