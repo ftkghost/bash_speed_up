@@ -166,10 +166,14 @@ alias vi='vim'
 # git command alias
 make_alias_auto_completion gs git status
 make_alias_auto_completion ga git add
+make_alias_auto_completion grs git reset HEAD
+make_alias_auto_completion grb git reset --soft HEAD^
 make_alias_auto_completion gsh git stash
+make_alias_auto_completion gush git stash pop
 make_alias_auto_completion gb git branch
 make_alias_auto_completion gc git commit
 make_alias_auto_completion gcmsg git commit -m
+make_alias_auto_completion gcmd git commit --amend
 make_alias_auto_completion gr git remote
 make_alias_auto_completion gpl git pull
 make_alias_auto_completion gph git push
